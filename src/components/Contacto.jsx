@@ -12,15 +12,15 @@ const Contacto = () => {
 
     <div className="container">
         <h1 className="main-title">Contacto</h1>
-        <form className="formulario" onSubmit={handleSubmit(enviar)}>
+        <div className="formulario" onSubmit={handleSubmit(enviar)}>
 
             <input type="text" placeholder="Ingresá tu nombre" {...register("nombre")} />
-            <input type="email" placeholder="Ingresá tu e-mail" {...register("email")} />
+            <input type="email" placeholder="Ingresá tu correo electrónico" {...register("email")} />
             <input type="phone" placeholder="Ingresá tu teléfono" {...register("telefono")} />
+            <textarea></textarea>
+            <a href="mailto:cristianmaida@outlook.com" className="enviar" type="submit">Enviar</a>
 
-            <button className="enviar" type="submit">Enviar</button>
-
-        </form>
+        </div>
     </div>
 
   )
