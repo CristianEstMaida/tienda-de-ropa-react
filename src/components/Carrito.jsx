@@ -12,16 +12,18 @@ const Carrito = () => {
 
   return (
     <div className="container">
+        <div className='contenedor-carrito'>
         <h1 className="main-title">Carrito</h1>
 
         {
             carrito.map((prod) => (
-                <div key={prod.id}>
+                <div className='carrito-producto' key={prod.id}>
                     <br />
-                    <h3>{prod.titulo}</h3>
-                    <p>Precio unit: ${prod.precio}</p>
-                    <p>Precio total: ${prod.precio * prod.cantidad}</p>
-                    <p>Cant: {prod.cantidad}</p>
+                    <img class="carrito-producto-imagen" src={prod.imagen} alt={prod.titulo} />
+                    <h3 className='carrito-producto-titulo'>{prod.titulo}</h3>
+                    <p className='carrito-producto-precio'>Precio unitario: ${prod.precio}</p>
+                    <p className='carrito-producto-subtotal'>Precio total: ${prod.precio * prod.cantidad}</p>
+                    <p className='carrito-producto-cantidad'>Cantidad: {prod.cantidad}</p>
                     <br />
                 </div>
             ))
@@ -30,12 +32,20 @@ const Carrito = () => {
         {  
             carrito.length > 0 ?
             <>
-                <h2>Precio total: ${precioTotal()}</h2>
-                <button onClick={handleVaciar}>Vaciar</button>
-                <Link to="/checkout">Finalizar compra</Link>
+                <div className='carrito-acciones'>
+                    <div className="carrito-acciones-izquierda">
+                    <button className="carrito-acciones-vaciar" onClick={handleVaciar}>Vaciar</button>
+                    </div>
+                    <div className="carrito-acciones-derecha">
+                    <h2>Precio total: ${precioTotal()}</h2>
+                        <Link className='carrito-acciones-comprar' to="/checkout">Finalizar compra</Link>
+                    </div>
+                </div>
             </> :
             <h2>El carrito está vacío :(</h2>
         }
+        </div>
+        
         
     </div>
   )
