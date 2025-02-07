@@ -19,7 +19,9 @@ const Nosotros = () => {
   return (
     <div className="container">
         <h1 className="main-title">Nosotros</h1>
-        <p>Este es el componente "Nosotros"</p>
+        <p>Somos una pequeña empresa que recientemente ofrecemos a toda la comunidad productos relacionados con la ropa. Desde remeras hasta pantalones.</p>
+        <h2>Nuestro equipo</h2>
+        <p>Nuestro equipo está conformado por una familia.</p>
     </div>
   )
 }
