@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import { toCapital } from "../helpers/toCapital"
 import ItemCount from "./ItemCount"
 import { CartContext } from "../context/CartContext";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ( {item} ) => {
 
@@ -17,6 +18,32 @@ const ItemDetail = ( {item} ) => {
 
     const handleSumar = () => {
         cantidad < item.stock && setCantidad(cantidad + 1)
+    }
+
+    const showToast = () => {
+        
+        toast("Producto agregado", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            style: {
+                background: "linear-gradient(to right, var(--clr-main), var(--clr-main-light))",
+                borderRadius: "2rem",
+                textTransform: "upercase",
+                fontSize: ".75rem",
+                color:"white"
+            },
+            offset: {
+                x: '0.5rem', 
+                y: '0.5rem' 
+            }
+        });
+        
     }
 
     // const handleAgregar = () => {
@@ -42,8 +69,9 @@ const ItemDetail = ( {item} ) => {
                   handleSumar={handleSumar}
                   handleRestar={handleRestar}
                   //handleAgregar={handleAgregar}
-                  handleAgregar={() => { agregarAlCarrito(item, cantidad) }}
+                  handleAgregar={() => { agregarAlCarrito(item, cantidad); showToast(); }}
                 />
+                <ToastContainer />
             </div>
         </div>
     </div>
