@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CartWidget from './CartWidget'
 import NavbarResponsive from './NavbarResponsive'
 import AsideMenu from './AsideMenu'
+import NavLinks from './NavLinks';
 
 const Navbar = () => {
   return (   
