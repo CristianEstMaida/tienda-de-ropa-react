@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
 import { useEffect } from 'react'; // Necesitas el useEffect aquí
+import NavLinks from './NavLinks';
 
 const AsideMenu = () => {
   
