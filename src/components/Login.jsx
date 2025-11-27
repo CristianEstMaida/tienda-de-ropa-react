@@ -11,22 +11,15 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        setError(''); // Limpiar errores previos
+        setError('');
 
         try {
-            // Intenta iniciar sesión con email y contraseña
             await signInWithEmailAndPassword(auth, email, password);
             
-            // Opcional: Podrías añadir aquí lógica para asegurar que solo un "admin"
-            // pueda acceder (ej. usando Custom Claims de Firebase Auth, 
-            // pero requiere configuración en el Backend Admin SDK).
-
-            // Si el login es exitoso, navega al inicio o al panel de administración.
-            navigate('/'); 
+            navigate('/admin/pedidos');
 
         } catch (error) {
             console.error(error);
-            // Muestra un mensaje de error amigable al usuario
             setError('Error de inicio de sesión. Verifica tus credenciales.');
         }
     };
@@ -53,7 +46,6 @@ const Login = () => {
                     required
                 />
                 
-                {/* Muestra el error si existe, usando estilos de error definidos en main.css */}
                 {error && <p style={{ color: 'var(--clr-error)', marginTop: '0.5rem' }}>{error}</p>}
 
                 <button className="enviar" type="submit">Iniciar Sesión</button>
