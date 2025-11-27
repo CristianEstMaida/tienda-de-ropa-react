@@ -1,22 +1,39 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import NavbarResponsive from './NavbarResponsive'
-import AsideMenu from './AsideMenu'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import NavLinks from './NavLinks';
 
 const Navbar = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (   
     <>
-    <NavbarResponsive />
-      
+    
     <header className="navbar">
-         <Link to="/" className="logo"><h1>Tienda de ropa</h1></Link>
+         <Link 
+           to="/" 
+           className="logo" 
+           onClick={() => setMenuOpen(false)} 
+         >
+             <h1>Tienda de ropa</h1>
+         </Link>
         
-        <nav>
-          <NavLinks />
+        
+        <button 
+            className="open-menu" 
+            onClick={toggleMenu}
+            aria-expanded={menuOpen}
+        >
+          <i className="bi bi-list"></i>
+        </button>
+
+        
+        <nav className={menuOpen ? "menu-container menu-open" : "menu-container"}>
+          
+          <NavLinks closeMenu={() => setMenuOpen(false)} />
         </nav>
     </header>
-    <AsideMenu />
     </>
   )
 }
