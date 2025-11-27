@@ -18,6 +18,7 @@ const NavLinks = ({ closeMenu }) => {
       <li><Link className="menu-link boton-categoria" to="/productos/abrigos" onClick={handleClick}>Buzos</Link></li>
       <li><Link className="menu-link boton-categoria" to="/nosotros" onClick={handleClick}>Nosotros</Link></li>
       <li><Link className="menu-link boton-categoria" to="/contacto" onClick={handleClick}>Contacto</Link></li>
+      <li><Link className="menu-link" to="/admin" onClick={handleClick}>Admin Login</Link></li>
       <li><CartWidget /></li>
     </ul>
   );
