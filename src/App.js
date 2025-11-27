@@ -9,6 +9,7 @@ import { CartProvider } from "./context/CartContext";
 import Carrito from "./components/Carrito";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
+import PedidosAdmin from "./components/PedidosAdmin";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/carrito" element={<Carrito />}/>
             <Route path="/checkout" element={<Checkout />}/>
             <Route path="/admin" element={<Login />} />
+            <Route path="/admin/pedidos" element={<PedidosAdmin />} />
           </Routes>
           
         </BrowserRouter>
