@@ -44,6 +44,14 @@
     gap: 1rem;
 }
 
+.open-menu {
+    display: none;
+}
+
+.menu-container {
+    display: block; 
+}
+
 .menu-link {
     text-decoration: none;
     color: black;
@@ -268,13 +276,6 @@
     border-bottom-right-radius: 1rem;
 }
 
-.header-mobile {
-    display: none;
-}
-
-.close-menu {
-    display: none;
-}
 
 /* @media screen and (max-width: 600px){
  
@@ -343,7 +344,60 @@
     .menu {
         flex-direction: column;
     }
+    
+.navbar nav {
+        display: none;
+    }
 
+    .open-menu {
+    display: block; 
+    background-color: transparent;
+    color: black;
+    border: 0;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.navbar  {
+    padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--clr-main);
+}
+
+    .menu-container {
+        position: fixed; /* Usar fixed para que no se mueva con el scroll */
+        top: 6.5rem; /* Ajustar según la altura de tu header (2rem padding + algo de altura) */
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        background-color: var(--clr-main);
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        visibility: hidden;
+    }
+
+ .menu-container.menu-open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+ .menu {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar {
+    padding: 1rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    
     .boton-menu.active::before,
     .boton-menu.active::before {
         display: none;
