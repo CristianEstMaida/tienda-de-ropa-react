@@ -10,11 +10,14 @@ import Carrito from "./components/Carrito";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import PedidosAdmin from "./components/PedidosAdmin";
+import { AuthProvider } from "./context/AuthContext"; 
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
       <CartProvider>
+       <AuthProvider>
         <BrowserRouter>
 
           <Navbar />
@@ -29,10 +32,15 @@ function App() {
             <Route path="/carrito" element={<Carrito />}/>
             <Route path="/checkout" element={<Checkout />}/>
             <Route path="/admin" element={<Login />} />
-            <Route path="/admin/pedidos" element={<PedidosAdmin />} />
+            <Route element={<PrivateRoute />}>
+                  {/* Esta ruta solo será accesible si PrivateRoute permite el paso (si el usuario está logueado) */}
+                  <Route path="/admin/pedidos" element={<PedidosAdmin />} /> 
+                  {/* Aquí añadiría otras rutas de admin, ej: /admin/productos/nuevo */}
+              </Route>
           </Routes>
           
         </BrowserRouter>
+       </AuthProvider>
       </CartProvider>
     </div>
   );
