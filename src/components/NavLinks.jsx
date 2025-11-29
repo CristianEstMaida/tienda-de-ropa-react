@@ -23,6 +23,7 @@ const NavLinks = ({ closeMenu }) => {
     <ul className="menu">
       <li><Link className="menu-link boton-categoria" to="/productos" onClick={handleClick}>Productos</Link></li>
       <li><Link className="menu-link boton-categoria" to="/productos/calzadosfemeninos" onClick={handleClick}>Calzados femeninos</Link></li>
+      <li><Link className="menu-link boton-categoria" to="/productos/pantalonesfemeninos" onClick={handleClick}>Pantalones femeninos</Link></li>
       <li><Link className="menu-link boton-categoria" to="/productos/calzados" onClick={handleClick}>Calzados</Link></li>
       <li><Link className="menu-link boton-categoria" to="/productos/pantalones" onClick={handleClick}>Pantalones</Link></li>
       <li><Link className="menu-link boton-categoria" to="/productos/remeras" onClick={handleClick}>Remeras</Link></li>
