@@ -1,12 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CartWidget from './CartWidget';
+import { useAuth } from '../context/AuthContext';
 
 const NavLinks = ({ closeMenu }) => { 
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
   const handleClick = () => {
     if (closeMenu) {
       closeMenu();
     }
+  };
+
+  const handleLogout = async () => {
+    await logout(); 
+    navigate('/'); 
+    handleClick();
   };
 
   return (
@@ -18,7 +28,23 @@ const NavLinks = ({ closeMenu }) => {
       <li><Link className="menu-link boton-categoria" to="/productos/abrigos" onClick={handleClick}>Buzos</Link></li>
       <li><Link className="menu-link boton-categoria" to="/nosotros" onClick={handleClick}>Nosotros</Link></li>
       <li><Link className="menu-link boton-categoria" to="/contacto" onClick={handleClick}>Contacto</Link></li>
-      <li><Link className="menu-link" to="/admin" onClick={handleClick}>Admin Login</Link></li>
+      {user ? (
+        <li>
+          <button 
+            className="menu-link" 
+            onClick={handleLogout}
+            // Asegura que se vea como un enlace usando estilos en línea para sobreescribir el CSS base
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--clr-link)' }} 
+          >
+            Cerrar Sesión (Admin)
+          </button>
+        </li>
+      ) : (
+        // Si no está logueado, mostrar el enlace para iniciar sesión
+        <li>
+          <Link className="menu-link" to="/admin" onClick={handleClick}>Admin Login</Link>
+        </li>
+      )}
       <li><CartWidget /></li>
     </ul>
   );
