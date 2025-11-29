@@ -7,6 +7,9 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const logout = () => {
+        return signOut(auth);
+    };
 
     useEffect(() => {
         // Suscribirse a los cambios en el estado de autenticación de Firebase
@@ -22,7 +25,7 @@ export const AuthProvider = ({ children }) => {
 
     // El contexto proporciona el usuario autenticado y el estado de carga
     return (
-        <AuthContext.Provider value={{ user, loading }}>
+        <AuthContext.Provider value={{ user, loading, logout }}> 
             {children}
         </AuthContext.Provider>
     );
