@@ -9,31 +9,31 @@
 
 /* --- Variables de Color (Old Money - Light Mode) --- */
 :root {
-    --clr-main: #0A1931; /* Deep Navy Blue (Primary Brand) */
-    --clr-main-light: #F9F7F4; /* Cream / Off-White */
-    --clr-main-dark: #A52A2A; /* Deep Burgundy (Accent) */
-    --clr-gray: #E0E0E0; /* Light Gray for lines/borders */
-    --clr-white: #ffffff;
-    --clr-text: #333333; 
-    --clr-link: #F9F7F4; /* Cream text on dark navigation */
-    --clr-total-bg: #E0E0E0; /* Fondo sutil para total en carrito */
-    --clr-error: #A52A2A; /* Burgundy para errores */
-    --clr-success: #1C6758; /* Deep Forest Green para éxito */
-    --clr-shadow: rgba(0, 0, 0, 0.08);
+    --clr-main: #0A1931;       /* Azul Marino Profundo (Navy) */
+    --clr-main-light: #F9F7F4;  /* Crema / Off-White */
+    --clr-main-dark: #800000;  /* Borgoña/Marrón Oscuro (Accent/Titles) */
+    --clr-gray: #D6D6D6;       /* Gris claro para líneas/borde */
+    --clr-white: #ffffff;      /* Fondo principal */
+    --clr-text: #333333;       /* Texto oscuro */
+    --clr-link: #F9F7F4;       /* Texto claro para barra de navegación */
+    --clr-total-bg: #E0E0E0;   /* Fondo sutil para total en carrito */
+    --clr-error: #800000;      /* Borgoña para errores */
+    --clr-success: #1C6758;    /* Verde Oscuro (Accent de éxito) */
+    --clr-shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* --- Variables de Color (Old Money - Dark Mode) --- */
 @media (prefers-color-scheme: dark) {
     :root {
-        --clr-main: #1e2a3a;
-        --clr-main-light: #333f50;
-        --clr-main-dark: #cc9900; 
-        --clr-gray: #2c2c2c;
-        --clr-white: #121212;
-        --clr-text: #f0f0f0;
+        --clr-main: #1A3450;       /* Azul Oscuro para Navbar */
+        --clr-main-light: #2c2c2c; /* Gris Oscuro para secciones/cards */
+        --clr-main-dark: #C5B358;  /* Oro/Latón (Accent/Titles) - Alto Contraste */
+        --clr-gray: #3a3a3a;
+        --clr-white: #121212;      /* Fondo muy oscuro */
+        --clr-text: #F0F0F0;       /* Texto claro */
         --clr-link: #ffffff;
-        --clr-total-bg: #1e2a3a;
-        --clr-error: #ff7f7f;
+        --clr-total-bg: #1A3450;
+        --clr-error: #FF7F7F;
         --clr-success: #6aa84f;
         --clr-shadow: rgba(255, 255, 255, 0.05);
     }
