@@ -11,26 +11,26 @@
 :root {
     --clr-main: #0A1931;       /* Azul Marino Profundo (Navy) */
     --clr-main-light: #F9F7F4;  /* Crema / Off-White */
-    --clr-main-dark: #800000;  /* Borgoña/Marrón Oscuro (Accent/Titles) */
-    --clr-gray: #D6D6D6;       /* Gris claro para líneas/borde */
-    --clr-white: #ffffff;      /* Fondo principal */
-    --clr-text: #333333;       /* Texto oscuro */
-    --clr-link: #F9F7F4;       /* Texto claro para barra de navegación */
-    --clr-total-bg: #E0E0E0;   /* Fondo sutil para total en carrito */
-    --clr-error: #800000;      /* Borgoña para errores */
-    --clr-success: #1C6758;    /* Verde Oscuro (Accent de éxito) */
+    --clr-main-dark: #800000;  /* Borgoña/Marrón Oscuro (Accent/Titles) - Alto Contraste en Light Mode */
+    --clr-gray: #D6D6D6;       
+    --clr-white: #ffffff;      
+    --clr-text: #333333;       
+    --clr-link: #F9F7F4;       
+    --clr-total-bg: #E0E0E0;   
+    --clr-error: #800000;      
+    --clr-success: #1C6758;    
     --clr-shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* --- Variables de Color (Old Money - Dark Mode) --- */
 @media (prefers-color-scheme: dark) {
     :root {
-        --clr-main: #1A3450;       /* Azul Oscuro para Navbar */
-        --clr-main-light: #2c2c2c; /* Gris Oscuro para secciones/cards */
-        --clr-main-dark: #C5B358;  /* Oro/Latón (Accent/Titles) - Alto Contraste */
+        --clr-main: #1A3450;       
+        --clr-main-light: #2c2c2c; 
+        --clr-main-dark: #C5B358;  /* Oro/Latón (Accent/Titles) - Alto Contraste en Dark Mode */
         --clr-gray: #3a3a3a;
-        --clr-white: #121212;      /* Fondo muy oscuro */
-        --clr-text: #F0F0F0;       /* Texto claro */
+        --clr-white: #121212;      
+        --clr-text: #F0F0F0;       
         --clr-link: #ffffff;
         --clr-total-bg: #1A3450;
         --clr-error: #FF7F7F;
@@ -50,12 +50,13 @@ body {
     margin: 0 auto;
 }
 
+/* 🟢 ESTILO CENTRAL DE TÍTULOS (ALTO CONTRASTE) */
 .main-title {
     margin-top: 3rem; 
     margin-bottom: 1.5rem;
     font-size: 2.8rem;
     font-weight: 400; 
-    color: var(--clr-main-dark); /* Color de título de alto contraste */
+    color: var(--clr-main-dark); /* Color de alto contraste en ambos modos (Borgoña o Dorado) */
     border-bottom: 2px solid var(--clr-gray);
     padding-bottom: 0.5rem;
     font-family: 'Georgia', serif;
@@ -169,7 +170,7 @@ body {
 
 .producto h4 {
     font-size: 1.4rem;
-    color: var(--clr-main);
+    color: var(--clr-main-dark); /* 🟢 Corregido: Usar el color de alto contraste */
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-family: 'Georgia', serif;
@@ -220,7 +221,7 @@ body {
 
 .producto-detalle-info h3 {
     font-size: 3rem;
-    color: var(--clr-main);
+    color: var(--clr-main-dark); /* 🟢 Corregido: Usar el color de alto contraste */
     margin-bottom: 0.5rem;
     font-weight: 400;
     font-family: 'Georgia', serif;
@@ -307,7 +308,7 @@ body {
 .formulario h2 {
     font-size: 1.8rem;
     margin-top: 1rem;
-    color: var(--clr-main);
+    color: var(--clr-main-dark); /* 🟢 Corregido: Usar el color de alto contraste */
     font-weight: 500;
     border-bottom: 1px solid var(--clr-gray);
     width: 100%;
@@ -363,7 +364,7 @@ body {
 
 .carrito-vacio,
 .carrito-comprado {
-    color: var(--clr-main);
+    color: var(--clr-main-dark); /* 🟢 Corregido: Usar el color de alto contraste */
     font-size: 1.8rem;
     font-weight: 500;
     padding-top: 1rem;
@@ -391,7 +392,7 @@ body {
 
 .carrito-producto-titulo {
     font-weight: 700;
-    color: var(--clr-main);
+    color: var(--clr-main-dark); /* 🟢 Corregido: Usar el color de alto contraste */
     font-size: 1.2rem;
     font-family: 'Helvetica Neue', sans-serif;
 }
@@ -434,7 +435,7 @@ body {
 }
 
 .carrito-acciones-total h2 {
-    color: var(--clr-main);
+    color: var(--clr-main-dark); /* 🟢 Corregido: Usar el color de alto contraste */
     font-size: 1.5rem;
     font-weight: 600;
     font-family: 'Helvetica Neue', sans-serif;
